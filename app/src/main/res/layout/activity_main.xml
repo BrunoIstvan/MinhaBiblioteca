@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnSubtrair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/edtSecondNumber"
+        app:layout_constraintTop_toTopOf="@+id/btnSomar"
+        tools:text="-" />
+
+    <Button
+        android:id="@+id/btnMultiplicar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="X"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/btnSomar"
+        app:layout_constraintTop_toBottomOf="@+id/btnSomar"
+        tools:text="X" />
+
+    <Button
+        android:id="@+id/btnDividir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnSubtrair"
+        app:layout_constraintTop_toTopOf="@+id/btnMultiplicar"
+        tools:text="/" />
+
+    <EditText
+        android:id="@+id/edtFirstNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Primeiro número"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtSecondNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Segundo número"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/edtFirstNumber"
+        app:layout_constraintStart_toStartOf="@+id/edtFirstNumber"
+        app:layout_constraintTop_toBottomOf="@+id/edtFirstNumber" />
+
+    <Button
+        android:id="@+id/btnSomar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="+"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/edtSecondNumber"
+        app:layout_constraintTop_toBottomOf="@+id/edtSecondNumber"
+        tools:text="+" />
+
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Resultado"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnDividir"
+        app:layout_constraintStart_toStartOf="@+id/btnMultiplicar"
+        app:layout_constraintTop_toBottomOf="@+id/btnMultiplicar" />
+</android.support.constraint.ConstraintLayout>
