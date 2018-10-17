@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import br.com.bicmsystems.canivetesuico.demo.Calculadora
+import br.com.bicmsystems.canivetesuico.toast.CustomToast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -70,7 +71,17 @@ class MainActivity : AppCompatActivity() {
 
             } else {
 
-                Toast.makeText(this, "Informe o primeiro e segundo número (não pode ser igual a zero) ", Toast.LENGTH_LONG).show()
+                val customToast = CustomToast(this, layoutInflater)
+
+                if(BuildConfig.REPORT_CRASH) {
+                    //Toast.makeText(this, "Crash ligado", Toast.LENGTH_LONG).show()
+                    customToast.showToast("Crash Ligado")
+                } else {
+                    //Toast.makeText(this, "Crash desligado", Toast.LENGTH_LONG).show()
+                    customToast.showToast("Crash Desligado")
+                }
+
+                //Toast.makeText(this, "Informe o primeiro e segundo número (não pode ser igual a zero) ", Toast.LENGTH_LONG).show()
 
             }
         }

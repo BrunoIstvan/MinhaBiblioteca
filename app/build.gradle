@@ -14,8 +14,34 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    flavorDimensions "app"
+
+    productFlavors {
+        demo {
+            dimension "app"
+            applicationIdSuffix = ".demo"
+        }
+        regular {
+            dimension "app"
+        }
+    }
+
     buildTypes {
+
+        // criação de versão de debug
+        debug {
+            buildConfigField "boolean", "REPORT_CRASH", "false"
+        }
+
+        // criação de versão de homologação
+        //homologacao {
+        //    buildConfigField "boolean", "REPORT_CRASH", "true"
+        //}
+
         release {
+            // criação de versão de produção
+            buildConfigField "boolean", "REPORT_CRASH", "true"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -28,7 +54,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:28.0.0-alpha3'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
 
-    implementation 'com.github.BrunoIstvan:CaniveteSuico:v1.1'
+    implementation 'com.github.BrunoIstvan:CaniveteSuico:v1.4'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
